@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nieuws Detective</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    Dit hele scherm zit in "nd-phone", zodat het eruitziet als een app op
+    een telefoon. De inhoud van de kaarten wordt door script.js gevuld,
+    hier in de HTML staan alleen de "lege" bouwstenen.
+  -->
+  <div class="nd-achtergrond">
+    <div class="nd-phone">
+
+      <!-- Bovenbalk: titel, score en voortgangsbalk -->
+      <div class="nd-header">
+        <div class="nd-titel">🔍 Nieuws Detective</div>
+        <div class="nd-score" id="score-teller">0 / 0</div>
+      </div>
+      <div class="nd-progress-track">
+        <div class="nd-progress-fill" id="voortgangsbalk"></div>
+      </div>
+
+      <!-- Hier komen de swipe-kaarten in te staan -->
+      <div class="nd-stack" id="kaarten-stack"></div>
+
+      <!-- Knoppen onderaan, voor wie liever klikt dan sleept -->
+      <div class="nd-controls" id="controls">
+        <button class="nd-btn nep" id="btn-nep" aria-label="Nep">✕</button>
+        <button class="nd-btn echt" id="btn-echt" aria-label="Echt">✓</button>
+      </div>
+      <div class="nd-hint">← sleep naar links voor nep &nbsp;·&nbsp; sleep naar rechts voor echt →</div>
+
+      <!-- Eindscherm met score en overzicht, standaard verborgen -->
+      <div class="nd-eindscherm" id="eindscherm" hidden>
+        <div class="nd-eind-score">
+          <div class="nd-eind-getal" id="eind-getal">0/0</div>
+          <div class="nd-eind-label">berichten goed beoordeeld</div>
+        </div>
+        <div class="nd-eind-lijst" id="eind-lijst"></div>
+        <button class="nd-start-btn" id="btn-opnieuw">↺ Nog een keer spelen</button>
+      </div>
+
+      <!-- Introscherm dat je bij het opstarten ziet -->
+      <div class="nd-intro" id="intro">
+        <div class="nd-intro-card">
+          <div class="nd-intro-icon">🔍</div>
+          <div class="nd-intro-title">Kun jij nepnieuws herkennen?</div>
+          <p class="nd-intro-text" id="intro-tekst"></p>
+          <div class="nd-intro-row">
+            <div class="nd-intro-pill nep">✕ Links = nep</div>
+            <div class="nd-intro-pill echt">✓ Rechts = echt</div>
+          </div>
+          <button class="nd-start-btn" id="btn-start">Start</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
