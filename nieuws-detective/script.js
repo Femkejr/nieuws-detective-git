@@ -443,6 +443,15 @@ class NieuwsDetectiveSpel {
   }
 }
 
+function randomlijst(lijst) {
+  const kopie = [...lijst];
+  for (let i = kopie.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [kopie[i], kopie[j]] = [kopie[j], kopie[i]];
+  }
+  return kopie;
+}
+
 /* =====================================================================
    SPEL STARTEN
    -----------------------------------------------------------------
@@ -450,4 +459,4 @@ class NieuwsDetectiveSpel {
    we maken er één "instantie" (object) van. Alles wat hierboven bij
    de klasse hoort, gebeurt nu automatisch voor dit ene spel.
    ===================================================================== */
-const spel = new NieuwsDetectiveSpel(ARTIKELEN);
+const spel = new NieuwsDetectiveSpel(randomlijst(ARTIKELEN));
